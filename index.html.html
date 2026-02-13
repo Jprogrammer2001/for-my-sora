@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Sora ❤️</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        overflow-y: auto; 
+        overflow-x: hidden;
+        /* Updated Background: Watercolor Rose Theme */
+        background: url('roses-background.jpg') no-repeat center center fixed; 
+        background-size: cover;
+        color: #333; /* Darker text for better contrast on light watercolor */
+    }
+
+    /* Soft overlay to ensure text readability over the artwork */
+    body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 245, 247, 0.4); /* Light rose tint */
+        z-index: -1;
+    }
+
+    .glow {
+        font-size: 3.5em;
+        color: #d63384;
+        text-shadow: 0 0 15px rgba(214, 51, 132, 0.3);
+        animation: pulse 3s infinite alternate;
+    }
+
+    @keyframes pulse {
+        from { transform: scale(1); text-shadow: 0 0 10px #ffb3ec; }
+        to { transform: scale(1.02); text-shadow: 0 0 25px #ff66cc; }
+    }
+
+    .page {
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        display: none; 
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    .page.active {
+        display: flex;
+        animation: fadeIn 2s ease;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .card { 
+        max-width: 700px;
+        background: rgba(255, 255, 255, 0.85); /* More opaque for watercolor background */
+        padding: 40px;
+        border-radius: 30px;
+        backdrop-filter: blur(8px);
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    button {
+        margin-top: 30px;
+        padding: 14px 35px;
+        border-radius: 30px;
+        border: none;
+        background: #d63384;
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.4s;
+    }
+
+    button:hover { 
+        background: #b02a6b; 
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(214, 51, 132, 0.4);
+    }
+
+    /* Petal-like particles */
+    .particle {
+        position: fixed;
+        width: 8px;
+        height: 8px;
+        background: #ffb3ec;
+        border-radius: 50% 0 50% 0; /* Leaf/Petal shape */
+        opacity: 0.6;
+        pointer-events: none;
+        animation: float 10s linear infinite;
+        z-index: -1;
+    }
+
+    @keyframes float {
+        0% { transform: translateY(110vh) rotate(0deg); opacity: 0.7; }
+        100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
+    }
+
+    #typing {
+        font-size: 1.15em;
+        line-height: 1.8em;
+        white-space: pre-line;
+        min-height: 250px;
+        text-align: left;
+        color: #444;
+        font-style: italic;
+    }
+</style>
+</head>
+<body>
+
+<div class="page active" id="p0">
+    <div class="card">
+        <h1 class="glow">Sora ❤️</h1>
+        <p style="font-size: 1.2em;">This is our little cinematic universe.</p>
+        <button onclick="goToNextPage()">Begin Our Story</button>
+    </div>
+</div>
+
+<div class="page" id="p1">
+    <div class="card">
+        <h2 style="color: #d63384;">🌍 Two Countries. One Heart ❤️</h2>
+        <p>You in Germany. Me thinking about you in Bangladesh under the same sky.</p>
+        <p>No matter the distance, we share the same moon, same heartbeat.</p>
+        <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
+        <p>The day we first talked - I didn’t know you would become this important.</p>
+        <p>The first time you stroke my hair - I felt safe.</p>
+        <p>The moment I realized you matter - I stopped pretending you didn’t.</p>
+        <button onclick="goToNextPage()">Continue</button>
+    </div>
+</div>
+
+<div class="page" id="p2">
+    <div class="card">
+        <h2 style="color: #d63384;">A Token of Love For You</h2>
+        <div id="typing"></div>
+        <button onclick="goToNextPage()">Next</button>
+    </div>
+</div>
+
+<div class="page" id="p3">
+    <div class="card">
+        <h2 style="color: #d63384;">Something From My Voice</h2>
+        <p>Press play when you're ready.</p>
+        <audio controls style="margin-top: 20px; width: 100%;">
+            <source src="myvoice.mp3" type="audio/mp3">
+        </audio>
+        <br>
+        <button onclick="goToNextPage()">Final Page</button>
+    </div>
+</div>
+
+<div class="page" id="p4">
+    <div class="card">
+        <p>One day, our first real hug.</p>
+        <p>One day, walking side by side at midnight instead of texting goodnight.</p>
+        <p>One day, a boat ride on a river under a full moon.</p>
+        <p>One day, a rickshaw date through bustling city streets.</p>
+        <p>One day, closing the distance for good :P </p>
+        <h3 style="color: #d63384; font-size: 1.8em; margin-top: 30px;">Happy Valentine's Day ❤️</h3>
+        <p style="font-size: 0.9em; color: #888;">Forever Yours.</p>
+    </div>
+</div>
+
+<audio id="bgmusic" loop>
+    <source src="mysong.mp3" type="audio/mp3">
+</audio>
+
+<script>
+    let currentPage = 0;
+    const totalPages = 5;
+    let typingStarted = false;
+
+    function goToNextPage() {
+        const music = document.getElementById("bgmusic");
+        
+        // Start background music on first click
+        if (currentPage === 0 && music) {
+            music.volume = 0.5; // Set volume to 50%
+            music.play().catch(e => console.log("Interaction required for audio"));
+        }
+
+        document.getElementById(`p${currentPage}`).classList.remove("active");
+        currentPage++;
+
+        if (currentPage < totalPages) {
+            const nextP = document.getElementById(`p${currentPage}`);
+            nextP.classList.add("active");
+
+            if (currentPage === 2) {
+                startTyping();
+            }
+        }
+    }
+
+    const letterText = `Sora,
+
+From the day you entered my life,
+you made distance feel smaller.
+
+I am proud of the man you are becoming.
+I adore your passion for your work and dreams.
+I adore your calm guidance to bring about the best version of me.
+I admire your strength.
+And I admire you way more than you know.
+And I choose you, today and always.
+
+One day we will close this distance.
+But until then,
+my heart finds its way to you.
+Every single day.
+
+Happy Valentine’s Day, My Heart ❤️
+-Your Pie`;
+
+    function startTyping() {
+        if (typingStarted) return;
+        typingStarted = true;
+        let i = 0;
+        const speed = 70; // Slightly faster for better flow
+        const container = document.getElementById("typing");
+
+        function type() {
+            if (i < letterText.length) {
+                container.innerHTML += letterText.charAt(i);
+                i++;
+                setTimeout(type, speed);
+            }
+        }
+        type();
+    }
+
+    function createParticle() {
+        const particle = document.createElement("div");
+        particle.classList.add("particle");
+        particle.style.left = Math.random() * 100 + "vw";
+        // Vary sizes slightly for a natural look
+        const size = (Math.random() * 8 + 4) + "px";
+        particle.style.width = size;
+        particle.style.height = size;
+        particle.style.animationDuration = (Math.random() * 5 + 7) + "s";
+        document.body.appendChild(particle);
+        setTimeout(() => particle.remove(), 10000);
+    }
+    setInterval(createParticle, 500);
+</script>
+
+</body>
+</html>
